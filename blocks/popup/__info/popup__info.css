@@ -1,0 +1,12 @@
+.popup__info {
+  font-size: 14px;
+  line-height: 17px;
+  border: none;
+  margin: 0;
+  padding: 0;
+  color: black;
+}
+
+.popup__info::placeholder {
+  color: black;
+}

@@ -1,0 +1,18 @@
+.element {
+  display: grid;
+  grid-template-columns: 282px;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 0 20px 0;
+  padding: 0;
+  height: 361px;
+}
+
+@media screen and (min-width: 1280px) {
+  .element {
+    
+    margin: 2% 0 0 0;
+  }
+}
