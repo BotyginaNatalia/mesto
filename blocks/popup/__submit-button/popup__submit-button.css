@@ -7,7 +7,8 @@
   border: none;
   border-radius: 2px;
   padding: 0;
-  cursor: pointer;
+  cursor: pointer;  
+  font-weight: normal;
 }
 
 .popup__submit-button:hover {
@@ -21,6 +22,5 @@
     margin: 3% 36px 37px 36px;
     font-size: 18px;
     line-height: 22px;
-    font-weight: normal;
   }
 }

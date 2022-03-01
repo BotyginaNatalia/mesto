@@ -1,15 +1,14 @@
 .popup__info {
-  font-size: 14px !important;
-  line-height: 17px !important;
+  font-size: 14px;
+  line-height: 17px;
   border: none;
   padding: 0;
-  color: black !important;
+  color: black;
   width: 238px;
   height: 27px;
   margin: 0.4% 22px 9% 22px;
   border-bottom: solid 1px #000000;
   opacity: 0.2;
-  font-family: Inter !important;
 }
 
 @media screen and (min-width: 1280px) {
