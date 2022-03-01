@@ -4,124 +4,95 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Место</title>
-    <link href="../mesto/pages/index.css" rel="stylesheet" />
+    <link href="pages/index.css" rel="stylesheet" />
   </head>
+
   <body>
     <div class="page">
       <header class="header">
-        <img class="header__logo" src="../mesto/images/logo.svg" alt="логотип" />
+        <img src="images/logo.svg" class="header__logo" alt="логотип" />
       </header>
       <main class="content">
         <section class="profile">
-          <img
-            src="images/kusto.jpg"
-            alt="портрет Кусто"
-            class="profile__image"
-          />
+          <img src="images/kusto.jpg" alt="портрет Кусто" class="profile__image" />
 
           <div class="profile__main">
             <h1 class="profile__title">Жак-Ив Кусто</h1>
-            <button type="button" class="profile__edit-button"></button>
+            <button type="button" class="profile__edit-button" aria-label="Редактировать"></button>
             <p class="profile__subtitle">Исследователь океана</p>
           </div>
 
-          <button type="button" class="profile__add-button"></button>
+          <button type="button" class="profile__add-button" aria-label="Добавить"></button>
         </section>
 
         <section class="elements">
-          <div class="element">
-            <img
-              src="../mesto/images/kirill-pershin-1088404-unsplash.jpg"
-              class="element__image"
-              alt="Карачаевск"
-            />
+          <article class="element">
+            <img src="images/Karachaevsk.jpg" class="element__image" alt="Карачаевск" />
             <div class="element__main">
               <h2 class="element__title">Карачаевск</h2>
-              <button type="button" class="element__like-button"></button>
+              <button type="button" class="element__like-button" aria-label="Нравится"></button>
             </div>
-          </div>
+          </article>
 
-          <div class="element">
-            <img src="../mesto/images/elbrus.png" class="element__image" alt="Эльбрус" />
+          <article class="element">
+            <img src="images/Elbrus.jpg" class="element__image" alt="Эльбрус" />
             <div class="element__main">
               <h2 class="element__title">Гора Эльбрус</h2>
-              <button type="button" class="element__like-button"></button>
+              <button type="button" class="element__like-button" aria-label="Нравится"></button>
             </div>
-          </div>
+          </article>
 
-          <div class="element">
-            <img src="../mesto/images/dombai.png" class="element__image" alt="Домбай" />
+          <article class="element">
+            <img src="images/Dombai.jpg" class="element__image" alt="Домбай" />
             <div class="element__main">
               <h2 class="element__title">Домбай</h2>
-              <button type="button" class="element__like-button"></button>
+              <button type="button" class="element__like-button" aria-label="Нравится"></button>
             </div>
-          </div>
+          </article>
 
-          <div class="element">
-            <img src="../mesto/images/elbrus.png" class="element__image" alt="Эльбрус" />
+          <article class="element">
+            <img src="images/Elbrus.jpg" class="element__image" alt="Эльбрус" />
             <div class="element__main">
               <h2 class="element__title">Гора Эльбрус</h2>
-              <button type="button" class="element__like-button"></button>
+              <button type="button" class="element__like-button" aria-label="Нравится"></button>
             </div>
-          </div>
+          </article>
 
-          <div class="element">
-            <img src="../mesto/images/dombai.png" class="element__image" alt="Домбай" />
+          <article class="element">
+            <img src="images/Dombai.jpg" class="element__image" alt="Домбай" />
             <div class="element__main">
               <h2 class="element__title">Домбай</h2>
-              <button type="button" class="element__like-button"></button>
+              <button type="button" class="element__like-button" aria-label="Нравится"></button>
             </div>
-          </div>
+          </article>
 
-          <div class="element">
-            <img
-              src="../mesto/images/kirill-pershin-1088404-unsplash.jpg"
-              class="element__image"
-              alt="Карачаевск"
-            />
+          <article class="element">
+            <img src="images/Karachaevsk.jpg" class="element__image" alt="Карачаевск" />
             <div class="element__main">
               <h2 class="element__title">Карачаево-Черкесия</h2>
-              <button type="button" class="element__like-button"></button>
+              <button type="button" class="element__like-button" aria-label="Нравится"></button>
             </div>
-          </div>
-        </section>
-        <footer class="footer">
-          <p class="footer__copyright">&copy;2022. Наталья Ботыгина</p>
-        </footer>
-
-        <section class="popup">
-          <div class="popup__main">
-            <button class="popup__close-button" type="button"></button>
-
-            <form class="popup__container">
-              <h2 class="popup__title">Редактировать профиль</h2>
-
-              <div class="popup__field">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Жак-Ив Кусто"
-                  class="popup__input-name popup__info"
-                />
-              </div>
-              <div class="popup__field">
-                <input
-                  type="text"
-                  name="job"
-                  placeholder="Исследователь океана"
-                  class="popup__input-job popup__info"
-                />
-              </div>
-
-              <button class="popup__submit-button" type="submit">
-                Сохранить
-              </button>
-            </form>
-          </div>
+          </article>
         </section>
       </main>
+
+      <footer class="footer">
+        <p class="footer__copyright">&copy;2022. Наталья Ботыгина</p>
+      </footer>
+    </div>
+    <div class="popup">
+      <div class="popup__main">
+        <button class="popup__close-button" type="button" aria-label="Закрыть"></button>
+
+        <form class="popup__container" name="popupInfo" action="">
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <input type="text" name="name" placeholder="Ваше имя" class="popup__info popup__info_name_active" />
+          <input type="text" name="job" placeholder="Род деятельности" class="popup__info popup__info_job_active" />
+          <button class="popup__submit-button" type="submit" aria-label="Сохранить">Сохранить</button>
+        </form>
+      </div>
     </div>
 
-    <script src="../mesto/blocks/scripts/index.js"></script>
+    <script src="blocks/scripts/index.js"></script>
   </body>
 </html>

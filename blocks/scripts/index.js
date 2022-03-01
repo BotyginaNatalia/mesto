@@ -1,50 +1,24 @@
 let container = document.querySelector(".content");
 
-let showEditForm = container.querySelector(".popup");
+let showEditForm = document.querySelector(".popup");
 
-let edit = container.querySelector(".profile");
+let edit = document.querySelector(".profile");
 
 let editButton = edit.querySelector(".profile__edit-button");
 
 let closeButton = showEditForm.querySelector(".popup__close-button");
 
-function openPopup() {
-  showEditForm.classList.toggle("popup_opened");
-}
+let profile = document.querySelector(".profile");
 
-editButton.addEventListener("click", openPopup);
-
-function closePopup() {
-  showEditForm.classList.toggle("popup_opened");
-}
-
-editButton.addEventListener("click", closePopup);
-
-let div = document.querySelector(".popup");
-
-document
-  .querySelector(".profile__edit-button")
-  .addEventListener("click", () => {
-    div.style.display =
-      getComputedStyle(div).display == "block" ? "none" : "block";
-  });
-
-document.querySelector(".popup__close-button").addEventListener("click", () => {
-  div.style.display =
-    getComputedStyle(div).display == "block" ? "none" : "none";
-});
-
-document
-  .querySelector(".popup__button-submit")
-  .addEventListener("click", () => {
-    div.style.display =
-      getComputedStyle(div).display == "block" ? "none" : "block";
-  });
+let profileContainer = document.querySelector(".profile__main");
 
 let formElement = document.querySelector(".popup__container");
 
-let inputName = formElement.querySelector(".popup__input-name");
-let inputJob = formElement.querySelector(".popup__input-job");
+let inputName = document.querySelector(".popup__info_name_active");
+
+let inputJob = document.querySelector(".popup__info_job_active");
+
+let submitButton = showEditForm.querySelector(".popup__submit-button");
 
 function formSubmitHandler(evt) {
   evt.preventDefault();
@@ -57,3 +31,15 @@ function formSubmitHandler(evt) {
 }
 
 formElement.addEventListener("submit", formSubmitHandler);
+
+editButton.onclick = function openPopup() {
+  showEditForm.classList.add("popup_opened");
+};
+
+closeButton.onclick = function closePopup() {
+  showEditForm.classList.remove("popup_opened");
+};
+
+submitButton.onclick = function closePopup() {
+  showEditForm.classList.remove("popup_opened");
+};
