@@ -5,6 +5,7 @@
   text-align: center;
   margin: 22.25px 0 0 0;
   width: 189px;
+  white-space: nowrap;
 }
 
 @media screen and (min-width: 1280px) {
