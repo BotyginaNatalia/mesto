@@ -5,15 +5,14 @@
   padding: 0;
   color: black;
   width: 238px;
-  height: 27px;
-  margin: 0.4% 22px 9% 22px;
+  margin: 0.4% 22px 12% 22px;
   border-bottom: solid 1px #000000;
   opacity: 0.2;
 }
 
 @media screen and (min-width: 1280px) {
   .popup__info {
-    margin: -2% 36px 8% 36px;
+    margin: 1% 36px 8% 36px;
     width: 358px;
   }
 }

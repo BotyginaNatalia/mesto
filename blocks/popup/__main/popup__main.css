@@ -1,13 +1,13 @@
 .popup__main {
   position: relative;
-  top: 25%;
   background: #fff;
   width: 282px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 auto;
+  align-self: center;
+  margin: 38% auto;
   padding: 0;
 }
 
