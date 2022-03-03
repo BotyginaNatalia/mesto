@@ -8,6 +8,10 @@ let closeButton = document.querySelector(".popup__close-button");
 
 function openPopup() {
   showEditForm.classList.add("popup_opened");
+
+  inputName.value = profileName.textContent;
+  inputJob.value = profileJob.textContent;
+  
 }
 
 function closePopup() {
