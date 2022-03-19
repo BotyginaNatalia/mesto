@@ -1,4 +1,4 @@
-.popup__info2 {
+.popup2__info {
   font-size: 14px;
   line-height: 17px;
   border: none;
@@ -10,7 +10,7 @@
 }
 
 @media screen and (min-width: 1280px) {
-  .popup__info2 {
+  .popup2__info {
     margin: 1% 36px 8% 36px;
     width: 358px;
   }

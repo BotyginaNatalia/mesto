@@ -14,11 +14,11 @@ let addForm = document.querySelector(".popup2");
 
 let addButton = document.querySelector(".profile__add-button");
 
-let closeButton2 = document.querySelector(".popup__close-button2");
+let closeButton2 = document.querySelector(".popup2__close-button");
 
 //for popup3
 
-let closeButton3 = document.querySelector(".popup__close-button3");
+let closeButton3 = document.querySelector(".popup3__close-button");
 
 //for buttons
 
@@ -134,18 +134,18 @@ formElement.addEventListener("submit", formSubmitHandler);
 //popup2
 
 function openPopup2() {
-  addForm.classList.add("popup_opened2");
+  addForm.classList.add("popup2_opened");
 }
 
 function closePopup2() {
-  addForm.classList.remove("popup_opened2");
+  addForm.classList.remove("popup2_opened");
 }
 
 let inputElementName = document.querySelector(".popup2__info_item");
 
 let inputElementLink = document.querySelector(".popup2__info_link");
 
-let addFormElement = document.querySelector(".popup__container2");
+let addFormElement = document.querySelector(".popup2__container");
 
 function renderNewElements (evt) {
   evt.preventDefault ();
@@ -183,8 +183,8 @@ const text = document.querySelector(".element__title").childNodes[0].nodeValue;
 
 const openPopup3 = (img) => {
   popup3.querySelector(".popup__image").src = img.currentTarget.src;  
-  popup3.querySelector(".popup__title3").textContent = text;
-  popup3.classList.add("popup_opened3");
+  popup3.querySelector(".popup3__title").textContent = text;
+  popup3.classList.add("popup3_opened");
 }
 
 elementImage.forEach(img => {
@@ -192,7 +192,7 @@ elementImage.forEach(img => {
 });
 
 function closePopup3() {
-  popup3.classList.remove("popup_opened3");
+  popup3.classList.remove("popup3_opened");
 }
 
 closeButton3.addEventListener("click", closePopup3);
