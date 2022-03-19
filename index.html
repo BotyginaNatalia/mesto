@@ -26,60 +26,15 @@
         </section>
 
         <section class="elements" aria-label="Фото">
-          <article class="element">
-            <img src="images/Karachaevsk.jpg" class="element__image" alt="Карачаевск" />
-            <div class="element__main">
-              <h2 class="element__title">Карачаевск</h2>
-              <button type="button" class="element__like-button" aria-label="Нравится"></button>
-            </div>
-          </article>
-
-          <article class="element">
-            <img src="images/Elbrus.jpg" class="element__image" alt="Эльбрус" />
-            <div class="element__main">
-              <h2 class="element__title">Гора Эльбрус</h2>
-              <button type="button" class="element__like-button" aria-label="Нравится"></button>
-            </div>
-          </article>
-
-          <article class="element">
-            <img src="images/Dombai.jpg" class="element__image" alt="Домбай" />
-            <div class="element__main">
-              <h2 class="element__title">Домбай</h2>
-              <button type="button" class="element__like-button" aria-label="Нравится"></button>
-            </div>
-          </article>
-
-          <article class="element">
-            <img src="images/Elbrus.jpg" class="element__image" alt="Эльбрус" />
-            <div class="element__main">
-              <h2 class="element__title">Гора Эльбрус</h2>
-              <button type="button" class="element__like-button" aria-label="Нравится"></button>
-            </div>
-          </article>
-
-          <article class="element">
-            <img src="images/Dombai.jpg" class="element__image" alt="Домбай" />
-            <div class="element__main">
-              <h2 class="element__title">Домбай</h2>
-              <button type="button" class="element__like-button" aria-label="Нравится"></button>
-            </div>
-          </article>
-
-          <article class="element">
-            <img src="images/Karachaevsk.jpg" class="element__image" alt="Карачаевск" />
-            <div class="element__main">
-              <h2 class="element__title">Карачаево-Черкесия</h2>
-              <button type="button" class="element__like-button" aria-label="Нравится"></button>
-            </div>
-          </article>
+          
         </section>
-      </main>
+            </main>
 
       <footer class="footer">
         <p class="footer__copyright">&copy;2022. Наталья Ботыгина</p>
       </footer>
     </div>
+
     <div class="popup">
       <div class="popup__main">
         <button class="popup__close-button" type="button" aria-label="Закрыть"></button>
@@ -92,6 +47,39 @@
         </form>
       </div>
     </div>
+
+    <div class="popup2 popup_add">
+      <div class="popup__main2">
+        <button class="popup__close-button2" type="button" aria-label="Закрыть"></button>
+
+        <form class="popup__container2" name="popupPlace" action="editItem">
+          <h2 class="popup__title2">Новое место</h2>
+          <input type="text" name="namePlace" class="popup__info2 popup2__info_item" value="Название" />
+          <input type="src" name="linkPlace" class="popup__info2 popup2__info_link" value="Ссылка" />
+          <button class="popup__submit-button2" type="submit" aria-label="Создать">Создать</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup3 popup_open_pic">
+      
+      <button class="popup__close-button3" type="button" aria-label="Закрыть"></button>
+      <form class="popup__container3" name="popupImg" action="openFullImage">
+      <img src="" alt="" class="popup__image" />
+      <h2 class="popup__title3"></h2>
+      </form>
+    </div>
+
+    <template class="template">
+      <div class="element">
+        <img src="" class="element__image" alt="" />
+        <div class="element__main">
+          <h2 class="element__title"></h2>
+          <button type="button" class="element__like-button" aria-label="Нравится"></button>
+        </div>
+        <button type="button" class="element__delete-button" aria-label="Удалить"></button>
+      </div>
+    </template>
 
     <script src="scripts/index.js"></script>
   </body>

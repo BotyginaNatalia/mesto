@@ -1,0 +1,10 @@
+.popup__title3 {
+    text-align: start;
+    font-size: 12px;
+    line-height: 15px;
+    color: #ffffff;
+    font-weight: 400;
+    position: absolute;
+    margin: 31% 0 0 0;
+    padding: 0;
+}
