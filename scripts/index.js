@@ -2,6 +2,16 @@
 
 let popups = document.querySelector(".popup");
 
+//popups open
+
+function openPopup(popups) {
+  popups.classList.add("popup_opened");
+}
+
+function closePopup(popups) {
+  popups.classList.remove("popup_opened");
+}
+
 //for popup1
 
 let showEditForm = document.querySelector(".popup_edit");
@@ -76,7 +86,6 @@ let closeImg = document.querySelector(".popup__close-button_pic");
 
 let imgForm = document.querySelector(".popup__container_pic");
 
-
 //for buttons
 
 let likeButton = document.querySelectorAll(".element__like-button");
@@ -147,16 +156,6 @@ function deletePic () {
   this.closest(".element").remove(); 
 }
 
-//popups
-
-function openPopup(popups) {
-  popups.classList.add("popup_opened");
-}
-
-function closePopup(popups) {
-  popups.classList.remove("popup_opened");
-}
-
 //popup2 adding elements
 
 function openAddForm() {
@@ -213,6 +212,4 @@ function closePicPopup() {
   fullImage.classList.remove("popup_opened");
 }
 
-imgForm.addEventListener("click", closePicPopup);
 closeImg.addEventListener("click", closePicPopup);
-
