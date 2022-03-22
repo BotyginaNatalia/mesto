@@ -122,7 +122,7 @@ function renderCard (elementImage, elementName) {
     openPopup(openFullImage);
   });
 
-  closeImg.addEventListener("click", () => closePopup(fullImage));
+  closeImg.addEventListener("click", () => closePopup(openFullImage));
 
   const likeButton = e => {
     e.target.classList.toggle("element__like-button_active");
