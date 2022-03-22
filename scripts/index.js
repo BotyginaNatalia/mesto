@@ -85,7 +85,7 @@ formProfileElement.addEventListener("submit", submitProfileForm);
 
 //for popup3
 
-const fullImage = document.querySelector(".popup_pic");
+const openFullImage = document.querySelector(".popup_pic");
 
 const closeImg = document.querySelector(".popup__close-button_pic");
 
@@ -119,18 +119,18 @@ function renderCard (elementImage, elementName) {
     imgForm.src = elementImage;
     imgForm.alt = elementName;
 
-    openPopup(fullImage);
+    openPopup(openFullImage);
   });
 
   closeImg.addEventListener("click", () => closePopup(fullImage));
 
-  const LikeButton = e => {
+  const likeButton = e => {
     e.target.classList.toggle("element__like-button_active");
   }
   
   const buttons = [...newElement.querySelectorAll(".element__like-button")];
   buttons.forEach(button => {
-    button.addEventListener("click", LikeButton)
+    button.addEventListener("click", likeButton)
   });
   
   const deleteButtons = [...newElement .querySelectorAll(".element__delete-button")];
