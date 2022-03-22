@@ -15,6 +15,6 @@
   align-self: center;
   visibility: hidden;
   opacity: 0;
-  transition: opacity 5s ease;
+  transition: opacity 1s ease;
   font-family: "Inter", "Arial", sans-serif;
 }

@@ -1,4 +1,5 @@
 .elements {
+  position: relative;
   max-width: 282px;
   display: flex;
   flex-direction: column;

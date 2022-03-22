@@ -63,9 +63,6 @@ function closeProfilePopup() {
 
 //popup1 profile edit
 
-inputName.value = profileName.textContent;
-inputJob.value = profileJob.textContent;
-
 function submitProfileForm(evt) {
   evt.preventDefault();
 
@@ -75,7 +72,12 @@ function submitProfileForm(evt) {
   closeProfilePopup();
 };
 
-editButton.addEventListener("click", openProfilePopup);
+editButton.addEventListener("click", function(){
+  inputName.value = profileName.textContent;
+  inputJob.value = profileJob.textContent;
+
+  openPopup(profileForm);
+});
 
 closeEdit.addEventListener("click", closeProfilePopup);
 
@@ -87,7 +89,9 @@ const fullImage = document.querySelector(".popup_pic");
 
 const closeImg = document.querySelector(".popup__close-button_pic");
 
-const imgForm = document.querySelector(".popup__container_pic");
+const imgForm = document.querySelector(".popup__image");
+
+const imgTitle = document.querySelector(".popup__title_pic");
 
 //for buttons
 
@@ -109,7 +113,16 @@ function renderCard (elementImage, elementName) {
 
   newElementImg.src = elementImage;
   newElementImg.alt = elementName;
-  
+
+  newElement.querySelector(".element__image").addEventListener("click", function(){
+    imgTitle.textContent = elementName;
+    imgForm.src = elementImage;
+    imgForm.alt = elementName;
+
+    openPopup(fullImage);
+  });
+
+  closeImg.addEventListener("click", () => closePopup(fullImage));
 
   const LikeButton = e => {
     e.target.classList.toggle("element__like-button_active");
@@ -135,7 +148,7 @@ function renderCard (elementImage, elementName) {
 function renderInitialCards(initialCards) {
   initialCards.forEach((item) => {
     elementBox.append(renderCard(item.link, item.name));
-  })
+  });
 }
 
 renderInitialCards(initialCards);
@@ -164,7 +177,6 @@ function closeAddForm() {
   closePopup(popupAddCardForm);
 };
 
-
 function createCard (evt) {
   evt.preventDefault ();
 
@@ -179,26 +191,3 @@ addButton.addEventListener("click", openAddForm);
 closeAdd.addEventListener("click", closeAddForm);
 
 formAddCard.addEventListener("submit", createCard);
-
-//popup3
-
-let elementImage = document.querySelectorAll(".element__image");
-
-const text = document.querySelector(".element__title").childNodes[0].nodeValue;
-
-const openPicPopup = (img) => {
-  fullImage.querySelector(".popup__image").src = img.currentTarget.src;  
-  fullImage.querySelector(".popup__title_pic").textContent = text;
-  fullImage.classList.add("popup_opened");
-  
-}
-
-elementImage.forEach(img => {
-  img.addEventListener("click", openPicPopup);
-});
-
-function closePicPopup() {
-  fullImage.classList.remove("popup_opened");
-}
-
-closeImg.addEventListener("click", closePicPopup);
