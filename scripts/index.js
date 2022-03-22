@@ -53,10 +53,6 @@ const formProfileElement = document.querySelector(".popup__container_profile");
 
 //popup1 functions
 
-function openProfilePopup() {
-  openPopup(profileForm);
-}
-
 function closeProfilePopup() {
   closePopup(profileForm);
 }
@@ -122,21 +118,15 @@ function renderCard (elementImage, elementName) {
     openPopup(openFullImage);
   });
 
-  closeImg.addEventListener("click", () => closePopup(openFullImage));
-
-  const likeButton = e => {
+    const likeButton = e => {
     e.target.classList.toggle("element__like-button_active");
   }
   
-  const buttons = [...newElement.querySelectorAll(".element__like-button")];
-  buttons.forEach(button => {
-    button.addEventListener("click", likeButton)
-  });
+  const likeButtonElement = newElement.querySelector(".element__like-button");
+  likeButtonElement.addEventListener("click", likeButton);
   
-  const deleteButtons = [...newElement .querySelectorAll(".element__delete-button")];
-  deleteButtons.forEach(button => {
-    button.addEventListener("click", deletePic)
-  });
+  const deleteButtons = newElement.querySelector(".element__delete-button");
+  deleteButtons.addEventListener("click", deletePic);
   
   function deletePic () {
     this.closest(".element").remove(); 
@@ -177,7 +167,7 @@ function closeAddForm() {
   closePopup(popupAddCardForm);
 };
 
-function createCard (evt) {
+function submitAddElementForm (evt) {
   evt.preventDefault ();
 
   elementBox.prepend(renderCard(inputElementLink.value, inputElementName.value));
@@ -190,4 +180,8 @@ addButton.addEventListener("click", openAddForm);
 
 closeAdd.addEventListener("click", closeAddForm);
 
-formAddCard.addEventListener("submit", createCard);
+formAddCard.addEventListener("submit", submitAddElementForm);
+
+//popup3
+
+closeImg.addEventListener("click", () => closePopup(openFullImage));

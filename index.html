@@ -41,8 +41,8 @@
 
         <form class="popup__container popup__container_profile" name="popupInfo" action="editProfile">
           <h2 class="popup__title">Редактировать профиль</h2>
-          <input type="text" name="name" class="popup__info popup__info_name_active" value="Ваше имя" />
-          <input type="text" name="job" class="popup__info popup__info_job_active" value="Род деятельности" />
+          <input type="text" name="name" class="popup__info popup__info_name_active" value="" placeholder="Ваше имя"/>
+          <input type="text" name="job" class="popup__info popup__info_job_active" value="" placeholder="Род деятельности" />
           <button class="popup__submit-button" type="submit" aria-label="Сохранить">Сохранить</button>
         </form>
       </div>
@@ -54,21 +54,23 @@
 
         <form class="popup__container popup__container_add" name="popupPlace" action="editItem">
           <h2 class="popup__title">Новое место</h2>
-          <input type="text" name="namePlace" class="popup__info popup__info_item" value="Название" />
-          <input type="src" name="linkPlace" class="popup__info popup__info_link" value="Ссылка" />
+          <input type="text" name="namePlace" class="popup__info popup__info_item" value="" placeholder="Название" />
+          <input type="src" name="linkPlace" class="popup__info popup__info_link" value="" placeholder="Ссылка" />
           <button class="popup__submit-button popup__submit-button_add" type="submit" aria-label="Создать">Создать</button>
         </form>
       </div>
     </div>
 
     <div class="popup popup_pic">
-      
+      <div class="popup__pic">
       <button class="popup__close-button popup__close-button_pic" type="button" aria-label="Закрыть"></button>
+
       <form class="popup__container popup__container_pic" name="popupImg" action="openFullImage">
       <img src="#" alt="" class="popup__image" />
       <h2 class="popup__title popup__title_pic"></h2>
       </form>
     </div>
+  </div>
 
     <template class="template">
       <div class="element">

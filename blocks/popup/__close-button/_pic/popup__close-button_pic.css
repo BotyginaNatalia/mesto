@@ -7,9 +7,8 @@
   height: 20px;
   cursor: pointer;
   border: none;
-  top: 15%;
-  right: 1px;
-  margin: 0;
+  top: -37px;
+  right: -1px;
   padding: 0;
 }
 
@@ -21,7 +20,7 @@
   .popup__close-button_pic {
     width: 32px;
     height: 32px;
-    top: 14%;
-    right: 26.5%;
+    top: -40px;
+    right: -40px;
   }
 }
