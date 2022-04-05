@@ -27,13 +27,41 @@ const initialCards = [
 
 //popups open
 
-function openPopup(popup) {
+const openPopup = function (popup)  {
   popup.classList.add("popup_opened");
+  document.addEventListener("keydown", handleEscUp);
+  document.addEventListener("click", handleOverlay);
 }
 
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
+  
 }
+
+//close popup by Esc
+
+const closePopupByEsc = (popup) => {
+  document.removeEventListener("keydown", handleEscUp);
+  popup.classList.remove("popup_opened");
+};
+
+const handleEscUp = (evt) => {
+  const activePopup = document.querySelector(".popup_opened");
+  if (evt.key === "Escape") {
+    closePopupByEsc(activePopup);
+  };
+};
+
+//close popup overlay
+
+function handleOverlay(evt) {
+	if (evt.target.classList.contains("popup")) {
+		const activePopup = document.querySelector(".popup_opened");
+		closePopup(activePopup);
+	};
+};
+
+
 
 //for popup1
 
@@ -165,7 +193,10 @@ function openAddForm() {
 
 function closeAddForm() {
   closePopup(popupAddCardForm);
+  
 };
+
+
 
 function submitAddElementForm (evt) {
   evt.preventDefault ();
@@ -185,3 +216,4 @@ formAddCard.addEventListener("submit", submitAddElementForm);
 //popup3
 
 closeImg.addEventListener("click", () => closePopup(openFullImage));
+
