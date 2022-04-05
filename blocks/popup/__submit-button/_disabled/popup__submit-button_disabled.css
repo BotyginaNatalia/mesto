@@ -2,7 +2,7 @@
   opacity: 0.2;
   border: 1px solid #000000;
   border-radius: 2px;
-  background-color: #ffffff;
+  background: rgba(0, 0, 0, 0.15);
   color: #000000;
 }
 
