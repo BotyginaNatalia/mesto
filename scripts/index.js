@@ -84,7 +84,7 @@ const openPopup = function (popup)  {
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
   document.removeEventListener("keydown", closePopupByEsc);
-  popup.removeEventListener("click", handleOverlay);
+  popup.removeEventListener("click", overlayClose);
   
 }
 
@@ -100,7 +100,7 @@ const closePopupByEsc = (evt) => {
 
 //close popup overlay
 
-function handleOverlay(evt) { 
+function overlayClose(evt) { 
 
 	if (evt.target.classList.contains("popup")) { 	
     closePopup(evt.target); 
