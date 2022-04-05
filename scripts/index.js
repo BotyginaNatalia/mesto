@@ -78,7 +78,7 @@ renderInitialCards(initialCards);
 const openPopup = function (popup)  {
   popup.classList.add("popup_opened");
   document.addEventListener("keydown", closePopupByEsc);
-  popup.addEventListener("click", handleOverlay);
+  popup.addEventListener("click", overlayClose);
 }
 
 function closePopup(popup) {
@@ -100,12 +100,11 @@ const closePopupByEsc = (evt) => {
 
 //close popup overlay
 
-function overlayClose(evt) { 
-
-	if (evt.target.classList.contains("popup")) { 	
-    closePopup(evt.target); 
-	}; 
-}; 
+function overlayClose(evt) {
+  if (evt.target.classList.contains("popup")) {
+    closePopup(evt.target);
+  };
+}
 
 //for popup1
 

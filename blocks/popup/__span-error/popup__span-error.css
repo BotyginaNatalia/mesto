@@ -2,13 +2,13 @@
   font-size: 12px;
   line-height: 15px;
   color: #ff0000;
-  margin: -10% 7.5% 13px 7.5%;
+  margin: -10% 7.5% 2% 7.5%;
   display: none;  
   padding: 0;
 }
 
 @media screen and (min-width: 1280px) {
   .popup__span-error {
-    margin: -7% 36px 13px 36px;
+    margin: -7% 36px 2% 36px;
   }
 }
