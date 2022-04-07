@@ -169,7 +169,7 @@ const inputElementName = document.querySelector(".popup__info_item");
 
 const inputElementLink = document.querySelector(".popup__info_link");
 
-const addCardSubmitButton = formAddCard.querySelector(".popup__submit-button_add");
+const addCardSubmitButton = document.querySelector(".popup__submit-button_add");
 
 //popup2
 
