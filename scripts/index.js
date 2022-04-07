@@ -169,7 +169,7 @@ const inputElementName = document.querySelector(".popup__info_item");
 
 const inputElementLink = document.querySelector(".popup__info_link");
 
-const submitButtonAddCard = formAddCard.querySelector(".popup__submit-button_add");
+const addCardSubmitButton = formAddCard.querySelector(".popup__submit-button_add");
 
 //popup2
 
@@ -183,8 +183,8 @@ function openAddForm() {
 function submitButtonInactive () {
   inputElementLink.value = "";
   inputElementName.value = "";  
-  submitButtonAddCard.classList.add("popup__submit-button_disabled");
-  submitButtonAddCard.disabled = true;    
+  addCardSubmitButton.classList.add("popup__submit-button_disabled");
+  addCardSubmitButton.disabled = true;    
 };
 
 function closeAddForm() {
