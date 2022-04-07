@@ -25,13 +25,14 @@ const initialCards = [
   }
 ];
 
+const template = document.querySelector(".template").content;
+
 //Cards function
 
 const elementBox = document.querySelector(".elements");
 
 function renderCard (elementImage, elementName) {
 
-  const template = document.querySelector(".template").content;
   const newElement = template.querySelector(".element").cloneNode(true);
   const newElementImg = newElement.querySelector(".element__image");
 
@@ -58,8 +59,8 @@ function renderCard (elementImage, elementName) {
   const buttonsDelete = newElement.querySelector(".element__delete-button");
   buttonsDelete.addEventListener("click", deletePic);
   
-  function deletePic () {
-    this.closest(".element").remove(); 
+  function deletePic (evt) {
+    evt.target.closest(".element").remove(); 
   }
 
   return newElement;
