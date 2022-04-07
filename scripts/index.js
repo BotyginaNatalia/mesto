@@ -1,3 +1,9 @@
+//template
+
+const template = document.querySelector(".template").content;
+
+//cards
+
 const initialCards = [
   {
     name: 'Архыз',
@@ -24,8 +30,6 @@ const initialCards = [
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
 ];
-
-const template = document.querySelector(".template").content;
 
 //Cards function
 
@@ -178,22 +182,23 @@ const inputElementLink = document.querySelector(".popup__info_link");
 //popup2
 
 function openAddForm() {
-  openPopup(popupAddCardForm);
+  openPopup(popupAddCardForm);  
 };
 
 function closeAddForm() {
-  closePopup(popupAddCardForm);
-  
+  closePopup(popupAddCardForm);  
 };
 
 function submitAddElementForm (evt) {
   evt.preventDefault ();
-
+  
+  if (inputElementLink.value != "" && inputElementName.value != "")
   elementBox.prepend(renderCard(inputElementLink.value, inputElementName.value));
-    
+
   closePopup(popupAddCardForm);
   formAddCard.reset();
 }
+
 buttonAdd.addEventListener("click", openAddForm);
 
 buttonAddClose.addEventListener("click", closeAddForm);
