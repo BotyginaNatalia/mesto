@@ -155,16 +155,6 @@ profileFormClose.addEventListener("click", closeProfilePopup);
 
 formProfileElement.addEventListener("submit", submitProfileForm);
 
-//for popup3
-
-const fullImageOpen = document.querySelector(".popup_pic");
-
-const imgClose = document.querySelector(".popup__close-button_pic");
-
-const imgForm = document.querySelector(".popup__image");
-
-const imgTitle = document.querySelector(".popup__title_pic");
-
 //for popup2
 
 const popupAddCardForm = document.querySelector(".popup_add");
@@ -179,10 +169,22 @@ const inputElementName = document.querySelector(".popup__info_item");
 
 const inputElementLink = document.querySelector(".popup__info_link");
 
+const submitButtonAddCard = formAddCard.querySelector(".popup__submit-button_add");
+
 //popup2
 
 function openAddForm() {
-  openPopup(popupAddCardForm);  
+  openPopup(popupAddCardForm);
+  submitButtonInactive();  
+};
+
+//popup 2 inactive submit button
+
+function submitButtonInactive () {
+  inputElementLink.value = "";
+  inputElementName.value = "";  
+  submitButtonAddCard.classList.add("popup__submit-button_disabled");
+  submitButtonAddCard.disabled = true;    
 };
 
 function closeAddForm() {
@@ -190,9 +192,8 @@ function closeAddForm() {
 };
 
 function submitAddElementForm (evt) {
-  evt.preventDefault ();
+  evt.preventDefault ();  
   
-  if (inputElementLink.value != "" && inputElementName.value != "")
   elementBox.prepend(renderCard(inputElementLink.value, inputElementName.value));
 
   closePopup(popupAddCardForm);
@@ -204,6 +205,16 @@ buttonAdd.addEventListener("click", openAddForm);
 buttonAddClose.addEventListener("click", closeAddForm);
 
 formAddCard.addEventListener("submit", submitAddElementForm);
+
+//for popup3
+
+const fullImageOpen = document.querySelector(".popup_pic");
+
+const imgClose = document.querySelector(".popup__close-button_pic");
+
+const imgForm = document.querySelector(".popup__image");
+
+const imgTitle = document.querySelector(".popup__title_pic");
 
 //popup3
 
