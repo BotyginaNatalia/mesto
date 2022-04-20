@@ -175,12 +175,13 @@ formAddCard.addEventListener("submit", submitAddElementForm);
 
 //popup3 open fullsize image
 
-function openFullSizeImage() {
-  imgTitle.textContent = this._name;
-  imgForm.src = this._link;
-  imgForm.alt = this._name;
-  openPopup(fullImageOpen);
-}
+function openFullSizeImage(link, name) { 
+  imgTitle.textContent = name; 
+  imgForm.src = link; 
+  imgForm.alt = name; 
+  openPopup(fullImageOpen); 
+
+}  
 
 //popup3 close
 
