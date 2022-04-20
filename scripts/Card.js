@@ -1,14 +1,14 @@
 export class Card {
-  constructor(data, cardTemplate, openFullSizeImage) {
+  constructor(data, cardTemplateSelector, openFullSizeImage) {
     this._name = data.name;
     this._link = data.link;
-    this._cardTemplate = cardTemplate;
+    this._cardTemplateSelector = cardTemplateSelector;
     this._openFullSizeImage = openFullSizeImage;
   }
 
   _getTemplate() {
     const newCardElement = document
-      .querySelector(this._cardTemplate)
+      .querySelector(this._cardTemplateSelector)
       .content.querySelector(".element")
       .cloneNode(true);
 
@@ -19,6 +19,7 @@ export class Card {
     this._element = this._getTemplate();
     this._imgForm = this._element.querySelector(".element__image");
     this._imgForm.src = this._link;
+    this._imgForm.alt = this._name;
     this._imgTitle = this._element.querySelector(".element__title");
     this._imgTitle.textContent = this._name;
     this._likeButton = this._element.querySelector(".element__like-button");
@@ -47,5 +48,7 @@ export class Card {
 
   _deleteCard() {
     this._element.remove();
+    this._element = null;
+    
   }
 }

@@ -1,5 +1,6 @@
 //import
 
+import { initialCards } from "./cards.js";
 import { Card } from "./Card.js";
 import { FormValidator } from "./FormValidator.js";
 
@@ -32,7 +33,7 @@ const buttonAddClose = document.querySelector(".popup__close-button_add");
 const inputElementName = document.querySelector(".popup__info_item");
 const inputElementLink = document.querySelector(".popup__info_link");
 
-const addCardSubmitButton = document.querySelector(".popup__submit-button_add");
+const popupAddCardSubmitButton = document.querySelector(".popup__submit-button_add");
 
 //for popup3
 
@@ -43,35 +44,6 @@ const imgClose = document.querySelector(".popup__close-button_pic");
 const imgForm = document.querySelector(".popup__image");
 
 const imgTitle = document.querySelector(".popup__title_pic");
-
-//cards
-
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
 
 //validationObjects
 
@@ -95,8 +67,8 @@ popupAddCardFormValidation.enableValidation();
 
 const elementBox = document.querySelector(".elements");
 
-function renderCard (data, cardTemplate, openFullSizeImage) {
-  const card = new Card (data, cardTemplate, openFullSizeImage);
+function renderCard (data, cardTemplateSelector, openFullSizeImage) {
+  const card = new Card (data, cardTemplateSelector, openFullSizeImage);
   return card.generateCard();
 }
 
@@ -110,13 +82,13 @@ initialCards.forEach((item) => {
 const openPopup = function (popup)  {
   popup.classList.add("popup_opened");
   document.addEventListener("keydown", closePopupByEsc);
-  popup.addEventListener("click", overlayClose);
+  popup.addEventListener("click", closeOverlay);
 }
 
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
   document.removeEventListener("keydown", closePopupByEsc);
-  popup.removeEventListener("click", overlayClose);
+  popup.removeEventListener("click", closeOverlay);
   
 }
 
@@ -132,7 +104,7 @@ const closePopupByEsc = (evt) => {
 
 //close popup overlay
 
-function overlayClose(evt) {
+function closeOverlay(evt) {
   if (evt.target.classList.contains("popup")) {
     closePopup(evt.target);
   };
@@ -142,20 +114,14 @@ function overlayClose(evt) {
 
 function openProfilePopup() {
   openPopup(profileForm);
+  inputName.value = profileName.textContent;
+  inputJob.value = profileJob.textContent;
+  profileFormValidation.hideErrorMessage();
 }
 
 function closeProfilePopup() {
   closePopup(profileForm);
 }
-
-//popup1 open and edit
-
-buttonEdit.addEventListener("click", function () {
-  inputName.value = profileName.textContent;
-  inputJob.value = profileJob.textContent;
-  profileFormValidation.hideErrorMessage();
-  openPopup(profileForm);
-});
 
 //popup1 submit and close
 
@@ -185,8 +151,8 @@ function closeAddForm() {
 buttonAdd.addEventListener("click", () => {
   inputElementLink.value = "";
   inputElementName.value = "";  
-  addCardSubmitButton.classList.add("popup__submit-button_disabled");
-  addCardSubmitButton.disabled = true;
+  popupAddCardSubmitButton.classList.add("popup__submit-button_disabled");
+  popupAddCardSubmitButton.disabled = true;
   formAddCard.reset();
   popupAddCardFormValidation.hideErrorMessage();
   openPopup(popupAddCardForm);
