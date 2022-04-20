@@ -19,7 +19,6 @@ export class Card {
     this._element = this._getTemplate();
     this._image = this._element.querySelector(".element__image");
     this._image.src = this._src;
-    this._image.alt = this._alt;
     this._title = this._element.querySelector(".element__title");
     this._title.textContent = this._name;
     this._likeButton = this._element.querySelector(".element__like-button");
