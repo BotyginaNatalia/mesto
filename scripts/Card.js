@@ -38,7 +38,7 @@ export class Card {
     });
 
     this._imgForm.addEventListener("click", () => {
-      this._openFullSizeImage();
+      this._openFullSizeImage(this._link, this._name);
     });
   }
 
@@ -49,6 +49,5 @@ export class Card {
   _deleteCard() {
     this._element.remove();
     this._element = null;
-    
   }
 }
