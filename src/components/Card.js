@@ -1,9 +1,9 @@
 export class Card {
-  constructor(data, cardTemplateSelector, openFullSizeImage) {
+  constructor({data, handleCardClick}, cardTemplateSelector) {
     this._name = data.name;
     this._link = data.link;
     this._cardTemplateSelector = cardTemplateSelector;
-    this._openFullSizeImage = openFullSizeImage;
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
@@ -38,9 +38,11 @@ export class Card {
     });
 
     this._imgForm.addEventListener("click", () => {
-      this._openFullSizeImage(this._link, this._name);
+      this._handleCardClick(this._link, this._name);
     });
   }
+
+
 
   _setLike() {
     this._likeButton.classList.toggle("element__like-button_active");
