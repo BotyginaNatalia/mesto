@@ -60,18 +60,18 @@ const createCard = (item) => {
   return newCard.generateCard();
 };
 
-const renderCard = new Section(
+const elementsBox = new Section(
   {
     items: initialCards, renderer: (item) => {renderCard.addItem(createCard(item));},
   },
   ".elements"
 );
 
-renderCard.renderItems(initialCards);
+elementsBox.renderItems(initialCards);
 
 /** popup1 */
 
-const submitProfileForm = new PopupWithForm(".popup_edit", () => {
+const popupProfileForm = new PopupWithForm(".popup_edit", () => {
   profileInfo.setUserInfo();
 });
 submitProfileForm.setEventListeners();
@@ -86,7 +86,7 @@ buttonEdit.addEventListener("click", () => {
   const newProfileInfo = profileInfo.getUserInfo();
   profileNameDefault.value = newProfileInfo.name;
   profileJobDefault.value = newProfileInfo.job;  
-  submitProfileForm.openPopup();
+  popupProfileForm.openPopup();
 });
 
 /** popup2 */
