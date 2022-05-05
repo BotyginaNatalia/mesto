@@ -62,10 +62,7 @@ export class FormValidator {
       inputElement.addEventListener("input", () => {
         this._checkInputValidity(inputElement);
         this._toggleButtonState(this._inputList, this._buttonElement);
-      });
-
-      this._formElement.addEventListener("submit", function (event) {
-        event.preventDefault();
+      
       });      
     });
   }
