@@ -62,7 +62,7 @@ const createCard = (item) => {
 
 const elementsBox = new Section(
   {
-    items: initialCards, renderer: (item) => {renderCard.addItem(createCard(item));},
+    items: initialCards, renderer: (item) => {elementsBox.addItem(createCard(item));},
   },
   ".elements"
 );
@@ -74,7 +74,7 @@ elementsBox.renderItems(initialCards);
 const popupProfileForm = new PopupWithForm(".popup_edit", () => {
   profileInfo.setUserInfo();
 });
-submitProfileForm.setEventListeners();
+popupProfileForm.setEventListeners();
 
 const profileInfo = new UserInfo({
   profileName: ".profile__title",
