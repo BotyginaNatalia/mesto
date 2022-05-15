@@ -37,5 +37,6 @@
 .footer{margin:0 auto;padding:0 19px 36px}@media screen and (min-width:1280px){.footer{display:flex;max-width:880px;padding:1% 0 60px}}
 .footer__copyright{color:#545454;font-size:14px;line-height:17px;margin:0;padding:0}@media screen and (min-width:1280px){.footer__copyright{font-size:18px;line-height:22px}}
 .element__number-of-like{color:#000;font-size:13px;font-weight:400;line-height:16px;margin:0;text-align:center}
+.profile__edit-avatar{display:flex}
 .profile__avatar-edit-button{background-color:transparent;background-image:url(a1892ea72cb87c8fc3aa.svg);background-size:contain;border:none;cursor:pointer;height:18px;margin:30.25px 0 0 10px;padding:0;width:18px}.profile__avatar-edit-button:hover{opacity:.6;z-index:2}
 
