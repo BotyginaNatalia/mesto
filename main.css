@@ -38,5 +38,5 @@
 .footer__copyright{color:#545454;font-size:14px;line-height:17px;margin:0;padding:0}@media screen and (min-width:1280px){.footer__copyright{font-size:18px;line-height:22px}}
 .element__number-of-like{color:#000;font-size:13px;font-weight:400;line-height:16px;margin:0;text-align:center}
 .profile__edit-avatar{display:flex;position:relative}
-.profile__avatar-edit-button{background-color:transparent;background-image:url(a1892ea72cb87c8fc3aa.svg);background-size:contain;border:none;cursor:pointer;height:26px;margin:85px 0 50px;padding:0;position:absolute;width:26px}.profile__avatar-edit-button:hover{opacity:.6;z-index:2}
+.profile__avatar-edit-button{background-color:transparent;background-image:url(a1892ea72cb87c8fc3aa.svg);background-size:contain;border:none;cursor:pointer;height:26px;margin:85px 50px 0 0;padding:0;position:absolute;width:26px}.profile__avatar-edit-button:hover{opacity:.6;z-index:2}
 
