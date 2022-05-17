@@ -36,3 +36,6 @@
 @import url(../blocks/popup/__info/_type/popup__info_type_error.css);
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
+@import url(../blocks/element/__number-of-like/__number-of-like.css);
+@import url(../blocks/profile/__edit-avatar/profile__edit-avatar.css);
+@import url(../blocks/profile/__avatar-edit-button/profile__avatar-edit-button.css);
