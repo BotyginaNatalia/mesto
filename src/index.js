@@ -63,7 +63,7 @@ avatarFormValidation.enableValidation();
 
 /** Api */
 const api = new Api({
-  baseUrl: "https://mesto.nomoreparties.co/v1/cohort-41/",
+  url: "https://mesto.nomoreparties.co/v1/cohort-41/",
   headers: {
     authorization: "fbc65fd2-5c16-4a99-9542-a08cde72dc8c",
     "content-Type": "application/json",
