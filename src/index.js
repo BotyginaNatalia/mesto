@@ -71,9 +71,9 @@ const api = new Api({
 });
 
 Promise.all([api.getOriginalProfileInfo(), api.getOriginalCards()])
-  .then(([userServerData, cardsData]) => {
-    userInfo.setUserInfo(userServerData);
-    cardsList.renderSectionItems(cardsData);
+  .then(([profileData, elementsData]) => {
+    userInfo.setUserInfo(profileData);
+    cardsList.renderSectionItems(elementsData);
   })
   .catch((err) => {
     alert(err);
