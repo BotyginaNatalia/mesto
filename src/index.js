@@ -15,7 +15,6 @@ import Api from "../src/components/Api.js";
 /** for popup1 */
 
 const buttonEdit = document.querySelector(".profile__edit-button");
-
 const userNameInput = document.querySelector("#input-name");
 const userDescriptionInput = document.querySelector("#input-job");
 
