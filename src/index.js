@@ -182,12 +182,12 @@ function handleLikeClick(card) {
 }
 
 function handleDeleteClick(card) {
-  popupWithDeleteVerification.openPopup(card);
+  popupSubmitCardRemove.openPopup(card);
 }
 
 buttonAdd.addEventListener("click", () => {
   popupAddCardFormValidation.hideErrorMessage();
-  popupWithAddForm.openPopup();
+  popupAddCardSubmitButton.openPopup();
 });
 
 /** pic popup3 */
