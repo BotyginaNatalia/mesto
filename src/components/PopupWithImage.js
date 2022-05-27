@@ -2,8 +2,8 @@ import Popup from "./Popup.js";
 export default class PopupWithImage extends Popup {
   constructor(selectorPopup) {
     super(selectorPopup);
-    this._imgForm = this._popupElement.querySelector(".popup__image");
-    this._imgTitle = this._popupElement.querySelector(".popup__title_pic");
+    this._imgForm = this._selectorPopup.querySelector(".popup__image");
+    this._imgTitle = this._selectorPopup.querySelector(".popup__title_pic");
   }
 
   openPopup(name, link) {
