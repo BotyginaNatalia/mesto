@@ -24,14 +24,11 @@ export default class Api {
     return fetch(`${this._url}${"cards"}`, {
       method: "POST",
       headers: this._headers,
-      body: JSON.stringify({
-        name: data.name,
-        link: data.link,
-      }),
+      body: JSON.stringify({name:data['inputPlace'], link:data['inputLink']})
     }).then(this._checkResponse);
   }
 
-    deleteCard(cardId) {
+  deleteCardFromServer(cardId) {
     return fetch(`${this._url}${"cards/"}${cardId}`, {
       method: "DELETE",
       headers: this._headers,
@@ -45,38 +42,35 @@ export default class Api {
     }).then(this._checkResponse);
   }
 
-  changeProfileInfo({ name, about }) {
+  changeProfileInfo(data) {
     return fetch(`${this._url}${"users/me"}`, {
       method: "PATCH",
       headers: this._headers,
-      body: JSON.stringify({
-        name: name,
-        about: about,
-      }),
+      body: JSON.stringify({name:data['inputName'], about:data['inputJob']}),
     }).then(this._checkResponse);
   }
 
-  updateAvatar({ avatar }) {
+  updateAvatar(data) {
     return fetch(`${this._url}${"users/me/avatar"}`, {
       method: "PATCH",
       headers: this._headers,
-      body: JSON.stringify({
-        avatar: avatar,
-      }),
+      body: JSON.stringify({avatar:data['inputAvatar']}
+    )
     }).then(this._checkResponse);
   }
 
   addLike(cardId) {
-    return fetch(`${this._url}${"cards/likes/"}${cardId}`, {
+    return fetch(`${this._url}/cards/${cardId}/likes`, {
       method: "PUT",
       headers: this._headers,
     }).then(this._checkResponse);
   }
 
   removeLike(cardId) {
-    return fetch(`${this._url}${"cards/likes/"}${cardId}`, {
+    return fetch(`${this._url}/cards/${cardId}/likes`, {
       method: "DELETE",
       headers: this._headers,
     }).then(this._checkResponse);
   }
 }
+

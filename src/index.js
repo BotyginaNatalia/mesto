@@ -2,12 +2,10 @@
 
 import Card from "../src/components/Card.js";
 import { FormValidator } from "../src/components/FormValidator.js";
-
 import Section from "../src/components/Section.js";
 import PopupWithImage from "../src/components/PopupWithImage.js";
 import PopupWithForm from "../src/components/PopupWithForm.js";
 import UserInfo from "../src/components/UserInfo.js";
-
 import "./pages/index.css";
 import PopupWithConfirmation from "../src/components/PopupWithConfirmation.js";
 import Api from "../src/components/Api.js";
@@ -15,8 +13,8 @@ import Api from "../src/components/Api.js";
 /** for popup1 */
 
 const buttonEdit = document.querySelector(".profile__edit-button");
-const userNameInput = document.querySelector("#input-name");
-const userDescriptionInput = document.querySelector("#input-job");
+const profileNameDefault = document.querySelector("#input-name");
+const profileJobDefault = document.querySelector("#input-job");
 
 /** for popup2 */
 
@@ -103,9 +101,9 @@ function createCard(data) {
 /** profile popup1 */
 
 const userInfo = new UserInfo({
-  nameSelector: ".profile__title",
-  aboutSelector: ".profile__subtitle",
-  avatarSelector: ".profile__image",
+  profileName: ".profile__title",
+  profileJob: ".profile__subtitle",
+  profileAvatar: ".profile__image",
 });
 
 const popupProfileForm = new PopupWithForm(
@@ -132,8 +130,8 @@ function handleEditFormSubmit(data) {
 
 buttonEdit.addEventListener("click", () => {
   const { name, about } = userInfo.getUserInfo();
-  userNameInput.value = name;
-  userDescriptionInput.value = about;
+  profileNameDefault.value = name;
+  profileJobDefault.value = about;
   profileFormValidation.hideErrorMessage();
   popupProfileForm.openPopup();
 });
@@ -158,10 +156,10 @@ function handleAddFormSubmit(data) {
     });
 }
 
-function handleLikeClick(card) {
-  if (card.hasMyLike) {
+function handleLikeClick(newCard) {
+  if (newCard._setLikeFromMe) {
     api
-      .removeLike(card.cardId)
+      .removeLike(newCard._cardId)
       .then((res) => {
         card.deleteNewLike(res.likes.length);
       })
@@ -170,7 +168,7 @@ function handleLikeClick(card) {
       });
   } else {
     api
-      .addLike(card.cardId)
+      .addLike(newCard._cardId)
       .then((res) => {
         card.addNewLike(res.likes.length);
       })
@@ -180,8 +178,8 @@ function handleLikeClick(card) {
   }
 }
 
-function handleDeleteClick(card) {
-  popupSubmitCardRemove.openPopup(card);
+function handleDeleteClick(newCard) {
+  popupSubmitCardRemove.openPopup(newCard);
 }
 
 buttonAdd.addEventListener("click", () => {
@@ -230,12 +228,12 @@ const popupSubmitCardRemove = new PopupWithConfirmation(
 );
 popupSubmitCardRemove.setEventListeners();
 
-function handleRemoveSubmit(card) {
+function handleRemoveSubmit(newCard) {
   popupSubmitCardRemove.renderLoading(true);
   api
-    .deleteCard(card.cardId)
+    .deleteCardFromServer(newCard._cardId)
     .then(() => {
-      card.deleteCard();
+      newCard.deleteCard();
       popupSubmitCardRemove.closePopup();
     })
     .catch((err) => {
