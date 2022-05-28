@@ -76,8 +76,7 @@ function createCard(item) {
     api,
   );
 
-  const newCardElement = newCard.generateCard();
-  return newCardElement;
+  return newCard.generateCard();
 }
 
 /** Api */
@@ -183,7 +182,9 @@ function avatarSubmitForm(avatar) {
       profileInfo.setUserInfo(res);
       popupAvatar.closePopup();
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      alert(err);
+    });
 }
 
 buttonOpenAvatar.addEventListener("click", () => {
