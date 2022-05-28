@@ -59,6 +59,7 @@ popupAddCardFormValidation.enableValidation();
 avatarFormValidation.enableValidation();
 
 /** cards functions */
+
 const renderCard = new Section(
   {
     renderer: createCard,
