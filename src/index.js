@@ -153,8 +153,8 @@ function addCardSubmitForm(data) {
     });
 }
 
-function handleDeleteButtonClick(newCard) {
-  popupSubmitCardRemove.openPopup(newCard);
+function handleDeleteButtonClick() {
+  popupSubmitCardRemove.openPopup();
 }
 
 buttonAdd.addEventListener("click", () => {
