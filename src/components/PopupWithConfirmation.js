@@ -4,7 +4,7 @@ export class PopupWithConfirmation extends Popup {
   constructor(selectorPopup) {
     super(selectorPopup);
     this._submitForm = null;
-    this._form = this._selectorPopup.querySelector(".popup__container");
+    this._form = this._elementPopup.querySelector(".popup__container");
   }
 
   setEventListeners() {
