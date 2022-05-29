@@ -10,12 +10,12 @@ import "./index.css";
 import { PopupWithConfirmation } from "../components/PopupWithConfirmation.js";
 import { Api } from "../components/Api.js";
 import {
-  validationObjects,
-  buttonEdit,
-  profileNameDefault,
-  profileJobDefault,
-  buttonAdd,
-  buttonOpenAvatar,
+      validationObjects,
+    buttonEdit,
+    profileNameDefault,
+    profileJobDefault,
+    buttonAdd,
+    buttonOpenAvatar,
 } from "../utils/constants.js";
 
 /** validation */
@@ -61,11 +61,7 @@ Promise.all([api.getOriginalProfileInfo(), api.getOriginalCards()])
     userId = allProfileInfo._id;
     renderCard.renderItems(allCardsInfo);
     
-  })
-  .catch((err) => {
-    alert(err);
-  });
-
+  }).catch((err) => console.log(err));
 /** cards functions */
 
 const renderCard = new Section(
@@ -110,20 +106,17 @@ const profileInfo = new UserInfo({
   profileAvatar: ".profile__image",
 });
 
-const popupProfile = new PopupWithForm(submitProfileForm, ".popup_edit");
+const popupProfile = new PopupWithForm(profileSubmitForm, ".popup_edit");
 popupProfile.setEventListeners();
 
-function submitProfileForm(data) {
+function profileSubmitForm(data) {
   popupProfile.renderLoading(true);
   api
     .changeProfileInfo(data)
     .then((res) => {
       profileInfo.setUserInfo(res);
       popupProfile.closePopup();
-    })
-    .catch((err) => {
-      alert(err);
-    })
+    }).catch((err) => console.log(err))    
     .finally(() => {
       popupProfile.renderLoading(false);
     });
@@ -149,10 +142,7 @@ function addCardSubmitForm(data) {
     .then((res) => {
       renderCard.addItem(createCard(res));
       popupAddCard.closePopup();
-    })
-    .catch((err) => {
-      alert(err);
-    })
+    }).catch((err) => console.log(err))    
     .finally(() => {
       popupAddCard.renderLoading(false);
     });
@@ -174,18 +164,17 @@ function handleCardClick(name, link) {
 
 /** avatar popup4 */
 
-const popupAvatar = new PopupWithForm(submitAvatarForm, ".popup_avatar");
+const popupAvatar = new PopupWithForm(avatarSubmitForm, ".popup_avatar");
 popupAvatar.setEventListeners();
 
-function submitAvatarForm(avatar) {
+function avatarSubmitForm(avatar) {
   popupAvatar.renderLoading(true);
   api
     .updateAvatar(avatar)
     .then((res) => {
       profileInfo.setUserInfo(res);
       popupAvatar.closePopup();
-    })
-    .catch((err) => console.log(err))
+    }).catch((err) => console.log(err))    
     .finally(() => {
       popupAvatar.renderLoading(false);
     });
