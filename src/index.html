@@ -104,7 +104,7 @@
       <form class="popup__container popup__container_delete-card" name="popupDeleteCard" action="deleteCard">
         <h2 class="popup__title">Вы уверены?</h2>
 
-        <button class="popup__submit-button popup__submit-button_delete" type="submit" aria-label="Удалить" disabled>Да</button>
+        <button class="popup__submit-button popup__submit-button_delete" type="submit" aria-label="Удалить">Да</button>
       </form>
     </div>
   </div>
@@ -113,14 +113,14 @@
     <div class="popup__main">
       <button class="popup__close-button popup__close-button_avatar" type="button" aria-label="Закрыть"></button>
 
-      <form class="popup__container popup__container_avatar" name="popupAvatar" action="changeAvatar">
+      <form class="popup__container popup__container_avatar" name="popupAvatar" action="changeAvatar" novalidate>
         <h2 class="popup__title">Обновить аватар</h2>
 
         <input id="input-avatar" type="url" 
         name="inputAvatar" class="popup__info popup__info_avatar" value="" 
         placeholder="Ссылка" required />
 
-        <span class="popup__span-error input-link-error"></span>
+        <span class="popup__span-error input-avatar-error"></span>
 
         <button class="popup__submit-button popup__submit-button_avatar" type="submit" aria-label="Создать" disabled>Сохранить</button>
       </form>
