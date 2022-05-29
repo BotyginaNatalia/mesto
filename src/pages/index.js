@@ -73,8 +73,9 @@ const api = new Api({
 Promise.all([api.getOriginalProfileInfo(), api.getOriginalCards()])
   .then(([allProfileInfo, allCardsInfo]) => {
     profileInfo.setUserInfo(allProfileInfo);
-    renderCard.renderItems(allCardsInfo);
     userId = allProfileInfo._id;
+    renderCard.renderItems(allCardsInfo);
+    
   })
   .catch((err) => {
     alert(err);
@@ -91,21 +92,12 @@ const renderCard = new Section(
   ".elements"
 );
 
-const cardRenderer = new Section(
-  {
-    renderer: (item) => {
-      cardRenderer.addItem(createCard(item));
-    },
-  },
-  ".elements"
-);
-
 function createCard(item) {
   const newCard = new Card(
     item,
     handleCardClick,
     {handleDeleteButtonClick: () => {
-      popupSubmitCardRemove.setSubmitAction(() => {
+      popupSubmitCardRemove.setDeletion(() => {
         api
           .deleteMyCard(item._id)
           .then(() => {

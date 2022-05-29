@@ -21,7 +21,7 @@ export class Card {
   }
 
   _ifLikeIsMine() {
-    if (this._likes.some((res) => res._id === this._userId)) {
+    if (this._likes.some((like) => like._id === this._userId)) {
       this._element.querySelector(".element__like-button").classList.add("element__like-button_active");
     }
   }
@@ -53,7 +53,7 @@ export class Card {
     this._imgTitle.textContent = this._name;
 
     this._deleteButton = this._element.querySelector(".element__delete-button");
-    if (this._userId != this._ownerId) {
+    if (this._ownerId != this._userId) {
       this._deleteButton.remove();
     }
     this._likeButton = this._element.querySelector(".element__like-button");
